@@ -15,8 +15,7 @@ Article.prototype.toHtml = function() {
   // TODO: Use handlebars to render your articles.
   //       - Get your template from the DOM.
   //       - Now "compile" your template with Handlebars.
-  var source   = $("#article-template").html();
-  var template = Handlebars.compile(source);
+  var templateFiller = Handlebars.compile( $("#article-template").html() );
 
   // REVIEW: If your template will use properties that aren't on the object yet, add them.
   //   Since your template can't hold any JS logic, we need to execute the logic here.
@@ -26,7 +25,12 @@ Article.prototype.toHtml = function() {
   this.publishStatus = this.publishedOn ? `published ${this.daysAgo} days ago` : '(draft)';
 
   // TODO: Use the function that Handlebars gave you to return your filled-in html template for THIS article.
-
+  // templateObject.forEach( arc =>{
+  //   articles.push( new Article (arc));
+  // });
+  var filledTemplate = templateFiller( this );
+  $('article').removeClass('template');
+  return filledTemplate;
 };
 
 rawData.sort(function(a,b) {
