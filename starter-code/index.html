@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="styles/modules.css">
   <link rel="icon" type="image/x-icon" href="https://avatars2.githubusercontent.com/u/18607604?v=3&s=200">
   <script id= "blog-template" type="text/x-handlebars-template">
-    <article class="template" data-category="cat">
+    <article data-category="cat">
       <header>
         <h1>{{title}}</h1>
         <div class="byline">
@@ -19,10 +19,10 @@
           published <time pubdate datetime="2000-01-01">{{publishedOn}}</time>
         </div>
       </header>
-      <section class="article-body"></section>
+      <section class="article-body">{{{body}}}</section>
       <a href="#" class="read-on">Read on &rarr;</a>
     </article>
-
+</script>
     <!--
     TODO: Add a script tag to hold the Handlebars template.
     - Be sure to give it a meaningful id attribute.
@@ -84,8 +84,10 @@
   <footer>
     &copy; 2017 Code Fellows | Static Blog | Happy Ipsum!
   </footer>
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script
+    src="https://code.jquery.com/jquery-3.2.1.min.js"
+    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.js"></script>
   <!-- TODO: Include Handlebars.JS from a CDN -->
   <script src="scripts/blogArticles.js"></script>
