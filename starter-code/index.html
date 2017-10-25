@@ -11,6 +11,20 @@
     <link rel="stylesheet" href="styles/modules.css">
     <link rel="icon" type="image/x-icon" href="https://avatars2.githubusercontent.com/u/18607604?v=3&s=200">
 
+<script id="articles-template" type="text/x-handlebars-template">
+  <article>
+    <header>
+              <h1>{{title}}</h1>
+              <div class="byline">
+                By <address><a href="{{authorUrl}}">{{author}}</a></address>
+                published <time pubdate datetime="2000-01-01">{{daysAgo}} days ago</time>
+              </div>
+            </header>
+            <section class="article-body">{{{body}}}</section>
+            <a href="#" class="read-on">Read on &rarr;</a>
+
+  </article>
+</script>
     <!--
       TODO: Add a script tag to hold the Handlebars template.
         - Be sure to give it a meaningful id attribute.
@@ -60,7 +74,7 @@
           Welcome to my Blog
         </header>
         <section>
-          <h1>Some of my intrests:</h1>
+          <h1>Some of my interests:</h1>
           <ul>
             <li>Coding</li>
             <li>Sharing what I've learned</li>
@@ -74,6 +88,8 @@
     </footer>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
+
     <!-- TODO: Include Handlebars.JS from a CDN -->
     <script src="scripts/blogArticles.js"></script>
     <script src="scripts/article.js"></script>
